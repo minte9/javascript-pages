@@ -1,6 +1,5 @@
 /**
  * Object are created using figure brakets {}
- * 
  * A property is a (key:value) pair
  */
 
