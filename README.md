@@ -22,5 +22,5 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 
 ## Testing
 
-  * [mocha/ [bdd.htm](./testing/mocha/bdd.htm), [bdd.test.js](./testing/mocha/bdd.test.js)
-  * [nested/ [describe](./testing/nested_describe/nested.test.js), [before](./testing/nested_describe/before.test.js)
+  * mocha/ [bdd.htm](./testing/mocha/bdd.htm), [bdd.test.js](./testing/mocha/bdd.test.js)
+  * nested/ [describe](./testing/nested_describe/nested.test.js), [before](./testing/nested_describe/before.test.js)
