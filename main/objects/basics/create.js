@@ -17,7 +17,7 @@ delete B.age; // remove a property
 console.log(B.age); // undefined
 
 /**
- * Computed properties
+ * Computed properties, use square brakets
  */
 let myvar = "my key";
 let C = {
