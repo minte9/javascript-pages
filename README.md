@@ -6,3 +6,5 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 
 - [Fundamentals](#fundamentals) 
 - [Testing](#testing) 
+
+## [Fundamentals](#fundamentals) 
