@@ -1,10 +1,8 @@
 /**
  * Object are created using figure brakets {}
  * A property is a (key:value) pair
- */
-
-/**
- * Empty object, with no properties
+ * 
+ * Empty object, with no properties:
  */
 let A = {};
 console.log(A.something); // undefined
