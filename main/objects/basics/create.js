@@ -4,11 +4,11 @@
  * 
  * Empty object, with no properties:
  */
-let A = {};
+let A = {}; // empty object
 console.log(A.something); // undefined
 
 /**
- * Object with properties
+ * Object with properties:
  */
 let B = {
     name: "John",
@@ -20,7 +20,7 @@ delete B.age; // remove a property
 console.log(B.age); // undefined
 
 /**
- * Computed properties
+ * Computed properties:
  */
 let myvar = "my key";
 let C = {
