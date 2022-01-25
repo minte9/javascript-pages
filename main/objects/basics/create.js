@@ -8,7 +8,7 @@ console.log(A.something); // undefined
 
 let B = {
     name: "John",
-    age: 30,  // trailing comma - accepted
+    age: 30,  // trailing comma
 };
 console.log(B.name); // John
 console.log(B.age); // 30
