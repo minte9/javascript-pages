@@ -9,8 +9,10 @@
  * 
  * The capital first letter is a convention ...
  * to make it clear that can be run with new.
+ * 
+ * JavaScript provides constructor functions for many 
+ * built-in language objects: like Date or Set.
  */
-
 
 function User(name) {
 
@@ -25,4 +27,4 @@ let A = new User("Jack");
 let B = new User("Mike");
 
 console.log(A.name); // Jack
-console.log(B.name); // Mike584
+console.log(B.name); // Mike
