@@ -9,12 +9,9 @@
 function User(name, birthdate) {
 
     this.name = name;
-    this.sayHi = function() {
-        console.log( "My name is: " + this.name );
-
-    };
     this.age = new Date().getFullYear() - new Date(birthdate).getFullYear();
     this.isAdult = this.age >= 18;
+    
     this.show = () => {
         console.log(this.name + ' is adult: ' + this.isAdult);
     }
