@@ -1,5 +1,5 @@
 /**
- * Private constructor:
+ * Private constructor (Singleton):
  * 
  * If we have many lines of code ...
  * we can wrap them into a single complex object.
