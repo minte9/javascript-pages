@@ -13,4 +13,4 @@ console.log("2" + "3"); // 23, not 5
 console.log("6" / "3"); // 2
 
 console.log(Number("2") + Number("3")); // 5
-console.log(String(2) + String(3)); // 23
+console.log(String(2) + String(3)); // 23 - Look Here

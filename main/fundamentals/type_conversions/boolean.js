@@ -5,8 +5,6 @@
 
 let a = "0";
 
-if (a) { // Boolean(a) == true
-
-    console.log("0 is true"); 
-        // 0 is true
+if (a) {
+    console.log("hello"); // hello
 }
