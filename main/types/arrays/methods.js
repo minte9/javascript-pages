@@ -10,16 +10,10 @@ let A = [
 let B = A.filter(item => item.id < 2);
 console.log(B); // {id: 1, user: 'John'}
 
-/**
- * map
- */
 let C = ["Bilbo", "Gandalf"];
 let D = C.map(item => item.length);
 console.log(D); // [5, 7]
 
-/**
- * sort
- */
 let E = [
     {id: 12, user: 'John'},
     {id: 2, user: 'Pete'},
