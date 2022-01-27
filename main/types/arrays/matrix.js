@@ -55,4 +55,4 @@ matrix.forEach((value, key, arr) => {
 let vars = ["Orange"];
 vars[123] = "Apple";
 
-console.log(vars.length); // 124 - Look Here!
+console.log(vars.length); // 124 - Look Here
