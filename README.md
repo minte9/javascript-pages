@@ -6,6 +6,10 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 
 - [Fundamentals](#fundamentals) 
 - [Testing](#testing) 
+- [Objects](#objects) 
+- [Types](#types) 
+- [Classes](#classe) 
+
 
 ## Fundamentals
   * hello/ [script](/main/fundamentals/hello_world/index.htm), [file](/main/fundamentals/hello_world/index2.htm)
@@ -21,6 +25,11 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
   * functions/ [variables](/main/fundamentals/functions/variables.js), [return](/main/fundamentals/functions/return.js), [readability](/main/fundamentals/functions/readability.js), [expression](/main/fundamentals/functions/function_expression.js), [arrow](/main/fundamentals/functions/arrow_function.js)
 
 ## Testing
-
   * mocha/ [browser](/main/testing/mocha/bdd.htm), [node](/main/testing/mocha/bdd.test.js)
   * nested/ [describe](/main/testing/nested_describe/nested.test.js), [before](/main/testing/nested_describe/before.test.js)
+
+## Objects
+  * basics/ [create](./main/objects/basics/create.js), [shorthand](./main/objects/basics/shorthand.js), [keys](./main/objects/basics/keys.js)
+  * reference/ [reference](./main/objects/reference/reference.js), [comparing](./main/objects/reference/comparing.js)
+  * methods/ [functions](./main/objects/methods/functions.js), [this](./main/objects/methods/this.js)
+  * constructor/ [new](./main/objects/constructor/new.js), [methods](./main/objects/constructor/methods.js), [private](./main/objects/constructor/private.js)
