@@ -1,6 +1,5 @@
 /**
- * In Javascript "0" is not threated as false.
- * (like in PHP)
+ * In Javascript "0" is not threated as false (like in PHP)
  */
 
 let a = "0";
