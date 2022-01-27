@@ -22,5 +22,5 @@ let obj = new Message("hello world");
 console.log(obj.msg + "!"); // HELLO WORLD!
 
 try {
-    console.log(obj.msg()); // Error: msg is not a function
+    console.log(obj.msg()); // Error: msg() is not a function
 } catch (err) {}
