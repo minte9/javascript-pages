@@ -43,5 +43,9 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 
 ## Classes
   * constructor/ [constructor](./main/classes/constructor/constructor.js), [getter](./main/classes/constructor/getter.js)
-  * binding/ [this](./main/classes/binding/losing_this.js), [bind](./main/classes/binding/bind.js)
+  * binding/ [losing_this](./main/classes/binding/losing_this.js), [bind](./main/classes/binding/bind.js)
   * inheritance/ [extend](./main/classes/inheritance/extend.js), [super](./main/classes/inheritance/super.js)
+
+##
+
+More on [minte9.com](https://www.minte9.com/javascript)
