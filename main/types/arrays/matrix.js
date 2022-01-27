@@ -22,15 +22,18 @@ console.log(matrix[1][1]); // 5, central element
  */
 
 for (let i=0; i<matrix.length; i++) { // classic loop
-    console.log(matrix[0][i]); // 1, 4, 7
+    console.log(matrix[0][i]); 
+        // 1, 4, 7
 }
 
 for (let item of matrix) {
-    console.log(item[0]); // 1, 4, 7
+    console.log(item[0]); 
+        // 1, 4, 7
 }
 
 for (let key in matrix) { // not recommended
-    console.log(matrix[key][0]); // 1, 4, 7
+    console.log(matrix[key][0]); 
+        // 1, 4, 7
 }
 
 matrix.forEach((value, key, arr) => {
