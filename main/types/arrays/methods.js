@@ -1,7 +1,5 @@
 /**
- * Array methods:
- *  
- * Most useful and often used: filter, map
+ * Array methods
  */
 
 /**
