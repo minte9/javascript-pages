@@ -1,5 +1,8 @@
 /**
- * Get / Set
+ * Get/Set
+ * 
+ * Such class declaration works by creating ...
+ * getters and setters in Message.prototype
  */
 
 class Message
