@@ -33,7 +33,18 @@ for (let key in matrix) { // not recommended
     console.log(matrix[key][0]); // 1, 4, 7
 }
 
+matrix.forEach((value, key, arr) => {
+    console.log(value.toString());
+        // 1, 2, 3
+        // 4, 5, 6
+        // 7, 8, 9
+});
 
+["Bilbo", "Gandalf"].forEach(console.log);
+    // Bilbo 0 [ 'Bilbo', 'Gandalf', 'Gollum' ]
+    // Gandalf 1 [ 'Bilbo', 'Gandalf', 'Gollum' ]
+
+    
 /**
  * Length
  * 
