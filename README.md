@@ -48,4 +48,4 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 
 ##
 
-More on [minte9.com](https://www.minte9.com/javascript)
+More on [minte9.com/javascript](https://www.minte9.com/javascript)
