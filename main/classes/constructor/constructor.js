@@ -12,7 +12,7 @@
  * Classe always use strict.
  */
 
-class User
+class User 
 {
     constructor (name) {
         this.name = name;
