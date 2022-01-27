@@ -33,3 +33,10 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
   * reference/ [reference](./main/objects/reference/reference.js), [comparing](./main/objects/reference/comparing.js)
   * methods/ [functions](./main/objects/methods/functions.js), [this](./main/objects/methods/this.js)
   * constructor/ [new](./main/objects/constructor/new.js), [methods](./main/objects/constructor/methods.js)
+
+## Types
+  * primitives/ [objects](./main/types/primitives/objects.js), [wrappers](./main/types/primitives/wrappers.js)
+  * numbers/ [round](./main/types/numbers/round.js), [precision](./main/types/numbers/precision.js), [convertion](./main/types/numbers/convertion.js)
+  * strings/ [backsticks](./main/types/strings/backsticks.js), [substring](./main/types/strings/substring.js)
+  * arrays/ [ordered](./main/types/arrays/ordered.js), [object](./main/types/arrays/object.js), [matrix](./main/types/arrays/matrix.js), [methods](./main/types/arrays/methods.js)
+  * json/ [stringify](./main/types/json/stringify.js), [parse](./main/types/json/parse.js)
