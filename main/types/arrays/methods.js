@@ -1,10 +1,7 @@
 /**
- * Array methods
+ * Array methods: filter, map, sort
  */
 
-/**
- * filter
- */
 let A = [
     {id: 1, user: 'John'},
     {id: 2, user: 'Pete'},
