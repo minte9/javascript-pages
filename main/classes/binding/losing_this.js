@@ -1,8 +1,7 @@
 /** 
  * JavaScript this depends on the context of the call.
  * 
- * In another context, ...
- * this won't be reference to its object any more.
+ * In another context, 'this' won't be reference to its object any more.
  * 
  * The problem is called 'losing this'.
  */
