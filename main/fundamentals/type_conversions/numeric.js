@@ -3,10 +3,6 @@
  * strings are automatically converted to numbers.
  * 
  * The addition operator (+) doesn't convert strings to numbers.
- * Use Number(value) to explicitly convert to number.
- * 
- * Other arithmetic operators work only with numbers and ...
- * always convert their operands to numbers.
  */
 
 console.log("2" + "3"); // 23, not 5
