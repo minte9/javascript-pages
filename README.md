@@ -40,3 +40,8 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
   * strings/ [backsticks](./main/types/strings/backsticks.js), [substring](./main/types/strings/substring.js)
   * arrays/ [ordered](./main/types/arrays/ordered.js), [object](./main/types/arrays/object.js), [matrix](./main/types/arrays/matrix.js), [methods](./main/types/arrays/methods.js)
   * json/ [stringify](./main/types/json/stringify.js), [parse](./main/types/json/parse.js)
+
+## Classes
+  * constructor/ [constructor](./main/classes/constructor/constructor.js), [getter](./main/classes/constructor/getter.js)
+  * binding/ [losing_this](./main/classes/binding/losing_this.js), [bind](./main/classes/binding/bind.js)
+  * inheritance/ [extend](./main/classes/inheritance/extend.js), [super](./main/classes/inheritance/super.js)
