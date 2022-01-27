@@ -8,7 +8,7 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
 - [Testing](#testing) 
 - [Objects](#objects) 
 - [Types](#types) 
-- [Classes](#classe) 
+- [Classes](#classes) 
 
 
 ## Fundamentals
