@@ -25,3 +25,18 @@ let B = new User("Mike");
 
 console.log(A.name); // Jack
 console.log(B.name); // Mike
+
+
+/**
+ * Private constructor (Singleton):
+ * 
+ * This encapsulate code that construct the object, ...
+ * without future reuse.
+ */
+
+ let user = new function(name) {
+    this.name = "John";
+    this.isAdmin = true;
+}
+
+console.log(user.isAdmin); // true
