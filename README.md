@@ -46,6 +46,16 @@ Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
   * binding/ [losing_this](./main/classes/binding/losing_this.js), [bind](./main/classes/binding/bind.js)
   * inheritance/ [extend](./main/classes/inheritance/extend.js), [super](./main/classes/inheritance/super.js)
 
+## Repo
+
+~~~sh
+# Install
+git clone https://github.com/minte9/javascript-pages.git
+
+# Update
+git pull origin main
+~~~
+
 ##
 
 More on [minte9.com/javascript](https://www.minte9.com/javascript)
