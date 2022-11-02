@@ -12,9 +12,3 @@ console.log(1 +
     2 + 
     3
 ); // 6
-
-console.log("There will be an error") // Look here - no semicolon
-    // There will be an error
-
-[1, 2].forEach(console.log); 
-    // Uncaught TypeError: Cannot read property
