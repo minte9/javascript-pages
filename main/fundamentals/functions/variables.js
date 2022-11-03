@@ -8,10 +8,12 @@
 let out = 'World';
 
 function print() {
-    out = 'Javascript';
     let msg = 'Hello ' + out;
     console.log(msg);
+    out = 'Javascript';
 }
 
+print(); // Hello World
 print(); // Hello Javascript
-console.log(msg); // Error: message is undefined
+
+console.log(msg2); // Error: message is undefined
