@@ -1,6 +1,6 @@
 /**
- * To declare a constant, we use const instead of let.
- * Such constants are named using capital letters and underscores.
+ * To declare a constant, we use const instead of let
+ * Constants are named using capital letters and underscores
  */
  
 const COLOR_BLUE = "#00F";

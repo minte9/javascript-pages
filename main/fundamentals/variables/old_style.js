@@ -1,9 +1,7 @@
 /**
- * In older scripts you find var keyword ...
- * when variable were declared.
+ * In older scripts you find var keyword
  * 
- * Var has no block scope, and generally not used ...
- * in modern scripts.
+ * Var has no block scope, not used in modern scripts
  */
 
 {
