@@ -1,4 +1,6 @@
 /**
+ * const
+ * 
  * To declare a constant, we use const instead of let
  * Constants are named using capital letters and underscores
  */

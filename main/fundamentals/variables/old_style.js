@@ -1,6 +1,7 @@
 /**
- * In older scripts you find var keyword
+ * var
  * 
+ * In older scripts you find var keyword
  * Var has no block scope, not used in modern scripts
  */
 

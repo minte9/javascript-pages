@@ -1,4 +1,6 @@
 /**
+ * let
+ * 
  * To create a variable in JavaScript, use the let keyword
  */
 
