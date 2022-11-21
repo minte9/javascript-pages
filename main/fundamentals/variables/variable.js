@@ -1,10 +1,5 @@
 /**
- * To create a variable in JavaScript, use the let keyword.
- * We can combine the variable declaration and assignment ...
- * into a single line.
- * 
- * For the sake of better readability, is better to ...
- * use a single line per variable.
+ * To create a variable in JavaScript, use the let keyword
  */
 
 let name;
