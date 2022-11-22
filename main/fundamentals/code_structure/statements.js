@@ -10,7 +10,7 @@ console.log(1 +         // 6
 );
 
 try {
-    console.log("No semicolon")
+    console.log("abc")  // Look Here
     [1, 2].forEach(console.log); 
 } catch (err) {
     console.log(err.name); // TypeError
