@@ -1,13 +1,12 @@
 /**
- * A separate function act as a great comment.
- * It good to create functions even if we don't reuse them.
+ * A separate function act as a great comment
+ * It good to create functions even if we don't reuse them
  */
 
 function showPrimes(n) {
     for (let i=2; i<n; i++) {
-
         if (isPrime(i)) {
-            console.log(i + ' is prime');
+            console.log(i);
         }
     }
 }
@@ -19,11 +18,4 @@ function isPrime(n) {
     return true;
 }
 
-showPrimes(10);
-
-/*
-    2 is prime
-    3 is prime
-    5 is prime
-    7 is prime
-*/
+showPrimes(10); // 2 3 5 7
