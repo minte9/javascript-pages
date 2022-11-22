@@ -5,7 +5,7 @@
  * The ternary operator has three operands
  * It's the only operator witch has more than two operands
  * 
- * The two question marks operator ??
+ * The two question marks operator ?? nullish coalescing
  * returns the first argument if it's not null/undefined
  */
 
