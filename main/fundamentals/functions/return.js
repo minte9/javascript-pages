@@ -1,31 +1,20 @@
 /**
  * It is posible to use return without value ...
- * which causes the function to exit 
- * (and returns undefined)
+ * which causes the function to exit (returns undefined)
  * 
  * Functions used very often can have ultrashort names,
- * but these are exceptions (jQuery $() or Lodash _())
+ * but these are exceptions:  $() jQuery, _() Lodash
  */
 
 function check(age) {
 
-    if (age >= 18) {
-        return true;
+    if (!age) {
+        console.log('undefined');
+        return;
     }
 
-    return false;
+    if (age > 18) console.log('OK');
 }
 
-function show(age) {
-
-    if ( !check(age)) {
-        console.log('NO');
-
-        return; // Look Here
-    }
-
-    console.log('YES');
-}
-
-show(17); // NO
-show(20); // YES
+check();   // undefined
+check(20); // OK
