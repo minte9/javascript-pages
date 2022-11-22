@@ -9,5 +9,5 @@
  */
 "use strict";
 
-let a = 1; // Correct
-b = 1; // ReferenceError: b is not defined
+let a = 1;  // Correct
+b = 1;      // b is not defined
