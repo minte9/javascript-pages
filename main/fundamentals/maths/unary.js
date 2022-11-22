@@ -2,6 +2,9 @@
  * The unary operator (+) applied to a single value
  * It doesn’t do anything to numbers
  * It converts the string to number
+ * 
+ * Unary pluses applied to values before the binary ones ...
+ * because of their higher precedence
  */
 
 let a = 1;
