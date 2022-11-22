@@ -1,10 +1,9 @@
 /**
- * A comparition result can be assign to a variable, 
- * like any other value.
+ * A comparition result can be assign to a variable
  */
 
-console.log(2 > 1); // true
-console.log(2 == 1); //false
+let a = 2 > 1;
+let b = 2 != 1;
 
-let result = 2 > 1;
-console.log(result); // true
+console.log(a); // true
+console.log(b); // true

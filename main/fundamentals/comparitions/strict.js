@@ -1,12 +1,11 @@
 /**
- * When comparing different types Javascript ...
- * converts the values to numbers.
+ * Javascript converts the values to numbers, 
+ * when comparing different types
  * 
- * A strict equality operator ====
- * checks the equality without type conversion
+ * Strict equality operator is recommended, 
+ * no type conversion
  */
 
-console.assert( '2' > 1 ); // pass (Wrong)
-console.assert( '01' == 1 ); // pass (Wrong)
-
-console.assert( '01' === 1 ); // failed (Correct)
+console.assert( '2' > 1 );      // pass     Wrong
+console.assert( '01' == 1 );    // pass     Wrong
+console.assert( '01' === 1 );   // failed   Correct
