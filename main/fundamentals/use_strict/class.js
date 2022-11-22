@@ -1,13 +1,16 @@
 /**
- * In classes and modules, 'use strict' ...
- * is enabled by default
+ * In classes and modules, strict is enabled by default
  */
-class MyClass {
-    constructor() {
-        a = 1;
-    }
-}
 
-let obj = new MyClass();
-    // ReferenceError: a is not defined
-    // Even if 'use strict' was not declared
+try {
+    class MyClass {
+        constructor() { 
+            a = 1; // Look Here
+        }
+    }
+    new MyClass();
+    
+} catch (err) {
+    console.log(err.name);      // ReferenceError
+    console.log(err.message);   // a is not defined
+}
