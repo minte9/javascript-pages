@@ -8,13 +8,10 @@
 
 function check(age) {
 
-    if (!age) {
-        console.log('undefined');
-        return;
-    }
+    if (!age) return; // Look Here
 
-    if (age > 18) console.log('OK');
+    if (age > 18) return 'OK';
 }
 
-check();   // undefined
-check(20); // OK
+console.log(check());   // undefined
+console.log(check(20)); // OK
