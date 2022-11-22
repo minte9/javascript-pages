@@ -8,9 +8,8 @@
 
 function check(age) {
 
-    if (!age) return; // Look Here
-
-    if (age > 18) return 'OK';
+    if (!age)       return; // Look Here
+    if (age > 18)   return 'OK';
 }
 
 console.log(check());   // undefined
