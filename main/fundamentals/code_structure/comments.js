@@ -3,10 +3,4 @@
  * Multiline comments start with a forward slash and an asterisk /*
 */
  
-// one line comment
-console.log('Hello');
-
-/**
- * Multi line comment
- */
-console.log('World');
+console.log('Hello'); // one line comment
