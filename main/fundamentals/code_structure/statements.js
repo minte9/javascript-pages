@@ -1,20 +1,17 @@
 /**
- * Between statements the semicolon can be omitted, but ...
- * it is recommended to put semicolons every time.
- * 
- * For example:
- * Javascript does not assume a semicolon before square brackets.
+ * Semicolon can be omitted, but not recommended
+ * A semicolon is not assume before square brackets
  */
-console.log("Hello");
-console.log("World");
-    // Hello
-    // World
 
-console.log(1 + 
-    2 + 
-    3
-); // 6
+console.log("Hello");   // Hello
+console.log("World");   // World
+console.log(1 +         // 6
+    2 + 3
+);
 
-// console.log("No semicolon")
-// [1, 2].forEach(console.log); 
-    // Uncaught TypeError
+try {
+    console.log("No semicolon")
+    [1, 2].forEach(console.log); 
+} catch (err) {
+    console.log(err.name); // TypeError
+}
