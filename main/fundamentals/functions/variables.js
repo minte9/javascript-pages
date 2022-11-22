@@ -1,19 +1,18 @@
 /**
- * Local variables are visible only inside a function.
- * A function has full access to an outer variable.
+ * Local variables are visible only inside a function
+ * A function has full access to an outer variable
  * 
- * Modern code has few or no global variables.
+ * Modern code has few or no global variables
  */
 
 let out = 'World';
 
-function print() {
+function hello() {
     let msg = 'Hello ' + out;
-    console.log(msg);
     out = 'Javascript';
 }
 
-print(); // Hello World
-print(); // Hello Javascript
+hello();
 
-console.log(msg2); // Error: message is undefined
+console.log(typeof(msg) == "undefined"); // true
+console.log(typeof(out) == "undefined"); // false
