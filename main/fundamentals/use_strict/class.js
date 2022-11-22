@@ -12,5 +12,5 @@ try {
     new MyClass();
 
 } catch (err) {
-    console.log(err.message);   // a is not defined
+    console.log(err.message); // a is not defined
 }
