@@ -12,6 +12,5 @@ try {
     new MyClass();
 
 } catch (err) {
-    console.log(err.name);      // ReferenceError
     console.log(err.message);   // a is not defined
 }
