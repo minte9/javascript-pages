@@ -1,11 +1,14 @@
 /**
  * Get/Set
  * 
- * Such class declaration works by creating ...
- * getters and setters in Message.prototype
+ * Just like literal objects, classes may include 
+ * getters/setters
+ * 
+ * Technically, such class declaration works by creating 
+ * getters and setters in MyClass.prototype
  */
 
-class Message
+class MyClass
 {
     constructor (msg) {
         this.msg = msg; // invokes the setter
@@ -21,9 +24,11 @@ class Message
     }
 }
  
-let obj = new Message("hello world");
+let obj = new MyClass("hello world");
 console.log(obj.msg + "!"); // HELLO WORLD!
 
 try {
-    console.log(obj.msg()); // Error: msg() is not a function
-} catch (err) {}
+    console.log(obj.msg());
+} catch (err) {
+    console.log(err.message); // Error: obj.msg is not a function
+}

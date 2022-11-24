@@ -1,15 +1,15 @@
 /**
  * Classes
  * 
- * We already know about new function() contructor.
+ * In JavaScript, a class is a special kind of function
  * 
- * Classes are an advanced object construct.
- * It introduce great new features useful for OOP.
+ * We create a function named User, 
+ * that becomes the result of the class declaration
  * 
- * In JavaScript, a class is a kind of function.
- * Within the class, no commas are required. 
+ * The constructor() method is called automatically by new
  * 
- * Classe always use strict.
+ * No comma required between class methods
+ * Classe always use strict
  */
 
 class User 
