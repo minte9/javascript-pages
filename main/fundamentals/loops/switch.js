@@ -1,11 +1,10 @@
 /**
- * In a switch stament the value must be of the ...
- * same type to match.
+ * Switch statement
  * 
- * The ability to group cases is a side-effect of ...
- * how switch works with break.
+ * The value must be of the same type to match
  * 
- * We can rewrite 'if' with 'switch'
+ * The ability to group cases is a side-effect of 
+ * how switch works with break
  */
 
 let a = 2;
@@ -16,7 +15,5 @@ switch(a) {
         console.log("2 or '2'");
         break;
     default:
-        console.log('no value');
+        console.log('no value'); // 2 or '2'
 }
-
-    // 2 or '2'

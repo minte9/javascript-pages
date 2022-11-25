@@ -1,6 +1,8 @@
 /**
- * A label is an identifier with a colon before the loop.
- * Labels are not to jump into an arbitrary place in the code.
+ * For label
+ * 
+ * A label is an identifier with a colon before the loop
+ * Labels are not to jump into an arbitrary place in the code
  */
 
 outer: while(true) {
@@ -8,14 +10,6 @@ outer: while(true) {
         if (i == 5) {
             break outer;
         }
-        console.log(i);
+        console.log(i); // 1 1 2 3 4
     }
 }
-
-/*
-    0
-    1
-    2
-    3
-    4
-*/
