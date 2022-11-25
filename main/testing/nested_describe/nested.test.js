@@ -1,7 +1,8 @@
 /**
- * Nested describe
+ * Group tests by nesting describe()
  * 
- * To group tests use nested describe.
+ * cd javascript-pages/main/testing/nested_describe/
+ * npm test
  */
 
 function isEven(n) {
@@ -11,10 +12,6 @@ function isEven(n) {
 function isOdd(n) {
     return n%2 != 0;
 }
-
-/**
- * Tests
- */
 
 let assert = require('assert');
 
@@ -35,13 +32,3 @@ describe('Number functions', function() {
     });
 
 });
-
-/*
-npm test
-
-Number functions
-    isEven
-    Check if number is even
-    isOdd
-    Check if number is odd
-*/

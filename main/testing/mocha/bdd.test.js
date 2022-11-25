@@ -9,6 +9,7 @@
  * 
  * npm install --save-dev mocha
  * npm install --save-dev chai
+ * 
  * cd javascript-pages/main/testing/mocha/
  * npm test
  * npm test -- --grep 'isOdd'
