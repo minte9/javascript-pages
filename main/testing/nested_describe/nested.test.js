@@ -1,8 +1,8 @@
 /**
  * Group tests by nesting describe()
  * 
- * $ cd javascript-pages/main/testing/nested_describe/
- * $ npm test
+ * cd javascript-pages/main/testing/nested_describe/
+ * npm test
  */
 
 function isEven(n) {
