@@ -14,10 +14,7 @@
 <body>
     <script>
 
-        /**
-         * Code to be tested
-         */
-        function isEven(n) {
+        function isEven(n) { // code to be tested
             return n%2 == 0;
         }
 
@@ -25,9 +22,6 @@
             return n%2 != 0;
         }
 
-        /**
-         * Tests
-         */
 
         mocha.setup('bdd'); // minimal setup
         let assert = chai.assert; // assert library
@@ -38,19 +32,17 @@
                 assert.equal(isEven(5), false);
             });
         });
-
         describe('isOdd', function() {
             it('Check if number is odd', function() {
                 assert.equal(isOdd(8), false);
                 assert.equal(isOdd(11), true);
             });
         });
-
     </script>
 
     <div id="mocha"></div>
     <script>
-        mocha.run(); // test run
+        mocha.run(); // from VsCode -> Open Live Server
     </script>
 
 </body>

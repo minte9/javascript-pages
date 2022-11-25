@@ -1,34 +1,25 @@
 /**
- * Mocha - the core framework: 
- * provide testing functions like describe and it, 
- * and the mai functions to run tests.
+ * BDD, Behavior Driven Development (tests, docs, examples)
  * 
- * Chai - the library with many assertions. 
- * It allows to use a lot of different assertions,
- * beyond the simple assert (from node.js)
+ * Mocha, the core framework
+ * Chai, the library with many assertions
+ * package.json
  * 
  * npm install --save-dev mocha
  * npm install --save-dev chai
- * 
- * BDD - Behavior Driven Development: tests AND docs AND examples.
+ * cd javascript-pages/main/testing/mocha/
+ * npm test
+ * npm test -- --grep 'isOdd'
  */
 
 
-/**
- * Code (to be tested, usually in separate file)
- */
-
-function isEven(n) {
+function isEven(n) { // ode to be tested, usually in separate file
     return n%2 == 0;
 }
 
 function isOdd(n) {
     return n%2 != 0;
 }
-
-/**
- * Tests
- */
 
 let assert = require('assert'); // node.js OR ...
 assert = require('chai').assert; // chai
@@ -46,26 +37,3 @@ describe('isOdd', function() {
         assert.equal(isOdd(11), true);
     });
 });
-
-/**
- * Run tests
- * 
- * Add 'scripts' to package.json
- * 
- * cd myproject/
- * npm test
- * 
- *   isEven
- *     Check if number is even
- *
- *   isOdd
- *     Check if number is odd
- * 
- * 
- * To run only one:
- * npm test -- --grep 'isOdd'
- * 
- * Or use it.only() in the test code
- */
-
-// "scripts": { "test": "mocha '**/*.test.js'" }
