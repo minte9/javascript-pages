@@ -2,7 +2,6 @@
  * Switch statement
  * 
  * The value must be of the same type to match
- * 
  * The ability to group cases is a side-effect of 
  * how switch works with break
  */
