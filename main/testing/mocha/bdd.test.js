@@ -5,7 +5,7 @@
  * 
  * Mocha, the core framework
  * Chai, the library with many assertions
- * package.json
+ * javascript-pages/package.json
  * 
  * npm install --save-dev mocha
  * npm install --save-dev chai
