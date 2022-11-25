@@ -7,12 +7,12 @@
  * Chai, the library with many assertions
  * javascript-pages/package.json
  * 
- * npm install --save-dev mocha
- * npm install --save-dev chai
+ * $ npm install --save-dev mocha
+ * $ npm install --save-dev chai
  * 
- * cd javascript-pages/main/testing/mocha/
- * npm test
- * npm test -- --grep 'isOdd'
+ * $ cd javascript-pages/main/testing/mocha/
+ * $ npm test
+ * $ npm test -- --grep 'isOdd'
  * 
  */
 
