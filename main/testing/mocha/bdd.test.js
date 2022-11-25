@@ -1,4 +1,6 @@
 /**
+ * bdd.test.js
+ * 
  * BDD, Behavior Driven Development (tests, docs, examples)
  * 
  * Mocha, the core framework
@@ -10,6 +12,7 @@
  * cd javascript-pages/main/testing/mocha/
  * npm test
  * npm test -- --grep 'isOdd'
+ * 
  */
 
 
