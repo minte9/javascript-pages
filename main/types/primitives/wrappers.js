@@ -5,7 +5,7 @@
  */
 
 let a = 'Hello World';      // Wrapper called
-let b = a.toUpperCase();    // Object a destroyed
+let b = a.toUpperCase();    // Object a destroyed, primitive remains
 let c = 1.23456;            // Wrapper called
 let d = c.toFixed(2);
 
