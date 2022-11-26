@@ -1,7 +1,8 @@
 /**
- * In JavaScript actions are represented by functions in properties.
+ * In JavaScript actions are represented by 
+ * functions in properties
  * 
- * We can also use a shorthand syntax.
+ * We can use a shorthand syntax
  */
 
 let A = {
@@ -11,8 +12,6 @@ let A = {
 A.sayHi = function() {
     console.log("Hello");
 };
-A.sayHi(); // Hello
-
 
 let B = {
     'name': 'Sam',
@@ -21,4 +20,6 @@ let B = {
         console.log("World");
     }
 }
+
+A.sayHi(); // Hello
 B.sayHi(); // World

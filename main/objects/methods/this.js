@@ -1,19 +1,19 @@
 /**
- * To access the object itself ...
- * a method can use the this keyword.
+ * To access the object itself, 
+ * a method uses the this keyword
  * 
- * Arrow functions have no 'this', 
- * it is taken from the outer normal function.
+ * Arrow functions have no this, 
+ * it is taken from the outer normal function
  */
 
 let A = {
     name: "John",
     sayHi() {
-        console.log(this.name);
+        console.log(
+            this.name // Look Here
+        );
     }
 };
-A.sayHi(); // John
-
 
 let B = {
     name: "Ilya",
@@ -22,4 +22,6 @@ let B = {
         arrow();
     }
 };
+
+A.sayHi(); // John
 B.sayHi(); // Ilya
