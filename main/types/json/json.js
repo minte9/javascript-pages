@@ -1,6 +1,5 @@
 /**
- * JSON.Stringify()
- * JSON.parse()
+ * JSON .Stringify() .parse()
  * 
  * Json string is called serialized
  * No single quotes or backticks in JSON
