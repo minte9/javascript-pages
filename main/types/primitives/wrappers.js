@@ -1,6 +1,6 @@
 /**
  * Object wrappers for each primitive type:
- * String, Number, Boolean ... 
+ * String, Number, Boolean, etc
  * Primitives can provide methods and still remain lightweight
  */
 
