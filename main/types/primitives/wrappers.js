@@ -1,20 +1,15 @@
 /**
- * The object wrappers are different for each primitive type:
+ * Object wrappers for each primitive type:
  * String, Number, Boolean, Symbol, BigInt
  * 
- * 1) The s1 string is a primitive
- * 2) the wrapper method is called and a String object is created
- * 3) the Object is destroyed, leaving str as primitive
- * 
- * Primitives can provide methods and still remain lightweight.
+ * Primitives can provide methods and still remain lightweight
  */
 
-let s1 = 'Hello World';
-let s2 = s1.toUpperCase();
+let a = 'Hello World'; // Wrapper called
+let b = a.toUpperCase(); // Object destroyed, only primitive remains
 
-console.log(s2); // HELLO WORLD
-   
-let n1 = 1.23456;
-let n2 = n1.toFixed(2);
+let c = 1.23456; // Wrapper calles
+let d = c.toFixed(2);
 
+console.log(b);  // HELLO WORLD
 console.log(n2); // 1.23
