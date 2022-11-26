@@ -1,16 +1,11 @@
 /**
- * Two independent objects are not equal ...
- * even thought they look alike.
+ * Two independent objects are not equal, 
+ * even thought they look alike
  */
 
-let a = {};
-let b = {};
+let A = {};
+let B = {};
+let C = B;
 
-console.log(a == b); // different objects
-    // false
-
-let c = {};
-let d = c;
-
-console.log(c === d); // reference to the same object
-    // true 
+console.log(A == B);  // false (different objects)
+console.log(C === B); // true (reference to the same object)
