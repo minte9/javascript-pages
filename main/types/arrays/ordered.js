@@ -1,10 +1,7 @@
 /**
- * Arrays are used to store ordered collections.
- * 
- * Objects are for storing key:value collections.
- * With object we can't insert new property between existing ones.
- * 
- * An array can store elements of any type.
+ * Arrays are used to store ordered collections
+ * Objects are for storing key:value collections 
+ * An array can store elements of any type
  */
 
 let vars = [
@@ -19,24 +16,17 @@ console.log(vars[1]);       // Orange
 console.log(vars[3].name);  // John
 vars[2]();                  // Hello World
 
+A = ["Apple", "Orange"];
+B = ["Apple", "Orange"];
+C = ["Apple", "Orange"];
+D = ["Apple", "Orange"];
 
-/**
- * pop - extract last
- * push - append at the end of array
- * shift - extract first
- * unshift - add to begining of array
- * pop/push - also return the element
- */
-vars = ["Apple", "Orange"];
+A.pop();                        // extract last
+B.push("Pear");                 // append at end
+C.shift();                      // extract first
+D.unshift("Orange", "Lemon");   // add to begining
 
-vars.pop();
-console.log(vars); // [Apple]
-
-vars.push("Pear");
-console.log(vars); // [Apple, Pear]
-
-vars.shift();
-console.log(vars); // [Pear]
-
-vars.unshift("Orange", "Lemon");
-console.log(vars); // [Orange, Lemon, Pear]
+console.log(A); // Apple
+console.log(B); // Apple, Orange, Pear
+console.log(C); // Orange
+console.log(D); // Orange, Lemon, Pear, Orange
