@@ -1,34 +1,27 @@
 /**
- * JSON.Stringify ...
- * converts objects to string.
+ * JSON.Stringify
  * 
- * The resulting json string is called serialized.
- * 
- * No single quotes or backticks in JSON.
- * JSON does not support comments.
+ * Json string is called serialized
+ * No single quotes or backticks in JSON
+ * Json does not support comments
+ * Nested objects are supported
  */
 
-let student = {
+let A = {
     age: 30,
     courses: ['html', 'css'],
 };
-let json = JSON.stringify(student);
-console.log(typeof json); 
-    // string
-console.log(json); 
-    // {"age":30,"courses":["html","css"]}
-  
-/**
- * Nested objects ...
- * are supported and converted automatically.
- */
-let meetup = {
-    title: 'Conference',
+
+let B = {
     room: {
-        number: 3,
-        users: ['John', 'Mary']
+        no: 3,
+        users: ['B', 'C']
     },
 };
-let meetup_json = JSON.stringify(meetup);
-console.log(meetup_json);
-    // {"title":"Conference","room":{"number":3,"users":["John","Mary"]}}
+
+let jsonA = JSON.stringify(A);
+let jsonB = JSON.stringify(B);
+
+console.log(typeof jsonA); // string
+console.log(jsonA); // {"age":30,"courses":["html","css"]}
+console.log(jsonB); // {"room":{"no":3,"users":["B","C"]}}

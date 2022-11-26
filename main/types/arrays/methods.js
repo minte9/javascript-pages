@@ -21,4 +21,4 @@ E.sort((a, b) => a.id - b.id);
 
 console.log(B);     // {id: 1, user: 'John'}
 console.log(D);     // [5, 7]
-console.log(E[0]);  // {id: 2, user: 'Pete'},
+console.log(E[0]);  // {id: 2, user: 'Pete'}
