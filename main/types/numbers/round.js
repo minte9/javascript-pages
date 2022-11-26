@@ -1,5 +1,5 @@
 /**
- * There are several built-in functions for rounding
+ * Several built-in functions for rounding
  */
 
 let n = 1.23456;
