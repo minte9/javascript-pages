@@ -1,27 +1,20 @@
 /**
- * In Javascript you can access non-existing keys.
- * The returned value is undefined.
- * 
- * We can test if a property exists using 'in' operator.
- * 
- * There is a special form of loop: for ... in, 
- * to walk over all keys of an object.
+ * Test if a property exists using 'in' operator
+ * Walk over all keys of an object, with for ... in loop
  */
 
 let A = {};
-console.log(A.name); 
-    // undefined
-
 let B = {};
-console.log('name' in B); 
-    // false
-
 let C = {
     'name': 'John',
     'age': 30,
 };
+
+console.log(A.name);        // undefined
+console.log('name' in B);   // false
+
 for (key in C) {
     console.log(key + ": " + C[key]);
+        // name: John
+        // age: 30
 }
-    // name: John
-    // age: 30
