@@ -2,12 +2,7 @@
  * Classes
  * 
  * In JavaScript, a class is a special kind of function
- * 
- * We create a function named User, 
- * that becomes the result of the class declaration
- * 
  * The constructor() method is called automatically by new
- * 
  * No comma required between class methods
  * Classe always use strict
  */

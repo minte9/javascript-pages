@@ -1,9 +1,6 @@
 /**
  * Get/Set
  * 
- * Just like literal objects, classes may include 
- * getters/setters
- * 
  * Technically, such class declaration works by creating 
  * getters and setters in MyClass.prototype
  */
@@ -25,10 +22,10 @@ class MyClass
 }
  
 let obj = new MyClass("hello world");
-console.log(obj.msg + "!"); // HELLO WORLD!
 
 try {
+    console.log(obj.msg + "!"); // HELLO WORLD!
     console.log(obj.msg());
 } catch (err) {
-    console.log(err.message); // Error: obj.msg is not a function
+    console.log(err.message); // obj.msg is not a function
 }
