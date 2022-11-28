@@ -1,7 +1,8 @@
 /** 
- * JS this, depends on the context of the call
+ * Losing this problem
+ * 
+ * Javascrip this, depends on the context of the call
  * In another context, it won't be reference to its object
- * The problem is called 'losing this'
  */
 
 class Button
