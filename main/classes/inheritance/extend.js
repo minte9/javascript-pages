@@ -15,7 +15,7 @@
 
     stop() {
         this.speed = 0;
-        console.log(`${this.name} stops`); // backsticks to embed vars
+        console.log(`${this.name} stops`); // backsticks to embed variables
     }
 }
 
