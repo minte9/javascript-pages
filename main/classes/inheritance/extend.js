@@ -1,9 +1,8 @@
 /**
- * Extend another class
+ * Inheritance, one class extends another class
  */
 
- class Animal
- {
+ class Animal  {
     constructor(name) {
         this.speed = 0;
         this.name = name;
@@ -11,7 +10,7 @@
 
     run(speed) {
         this.speed = speed;
-        console.log(`${this.name} runs with speed ${this.speed}`);
+        console.log(`${this.name} runs, speed ${this.speed}`);
     }
 
     stop() {
@@ -20,22 +19,17 @@
     }
 }
 
-class Rabbit extends Animal
-{
+class Rabbit extends Animal {
     hide() {
-        super.stop();
+        super.stop(); // Look Here
         console.log(`${this.name} hides!`);
     }
 }
 
-let rabbit = new Rabbit("My Rabbit");
+let rabbit = new Rabbit("A");
 
-rabbit.run(100); 
-    // My Rabbit runs with speed 100
-rabbit.stop(); 
-    // My Rabbit stops
-rabbit.run(50); 
-    // My Rabbit runs with speed 50
-rabbit.hide(); 
-    // My Rabbit stops
-    // My Rabbit hides!
+rabbit.run(100);    // A runs, speed 100
+rabbit.stop();      // A stops
+rabbit.run(50);     // A runs, speed 50
+rabbit.hide();      // A stops
+                    // A hides!
