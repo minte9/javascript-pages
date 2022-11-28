@@ -1,5 +1,5 @@
 /** 
- * Losing this problem
+ * Losing this, problem
  * 
  * Javascrip this, depends on the context of the call
  * In another context, it won't be reference to its object

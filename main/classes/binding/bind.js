@@ -1,5 +1,5 @@
 /**
- * Losing this problem, solutions
+ * Losing this, solutions
  * 
  * Wrapper-function OR Bind the method 
  * The bind() method takes an object as an first argument 
