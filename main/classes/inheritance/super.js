@@ -34,6 +34,6 @@ try {
     let b = new Y("bbb"); // doesnt' work
     console.log(b.name);
 } catch (err) {
-    console.log(err.name); // ReferenceError
-    console.log(err.message); // Must call super in constructor
+    console.log(err.name);      // ReferenceError
+    console.log(err.message);   // Must call super in constructor
 }
