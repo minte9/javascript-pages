@@ -1,6 +1,8 @@
 /**
- * Test if a property exists
+ * Object's keys
+ * 
  * Walk over all keys of an object, with for/in loop
+ * Test if a property exists with 'in' operator
  */
 
 let A = {
@@ -8,7 +10,8 @@ let A = {
     'age': 30,
 };
 
-console.log('xyz' in A); // false
+
 for (key in A) {
     console.log(C[key]); // John 30
 }
+console.log('xyz' in A); // false
