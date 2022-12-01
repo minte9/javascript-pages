@@ -16,7 +16,5 @@ function makeUser(name, age) {
 
 let user = makeUser("Marry", 18);
 
-console.assert(user.age == 18, true);  
-console.assert(user.tasks == 10, true);
-
-console.log("Testes passed");
+console.log(user.age);      // 18  
+console.log(user.tasks);    // 10

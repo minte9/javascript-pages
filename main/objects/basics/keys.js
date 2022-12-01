@@ -10,11 +10,9 @@ let C = {
     'age': 30,
 };
 
-console.assert(A.name == undefined, true);
-console.assert('name' in B == false, true);
+console.log(A.name);        // undefined
+console.log('name' in B);   // false
 
 for (key in C) {
-    console.log(C[key]); // John 30
+    console.log(C[key]);    // John 30
 }
-
-console.log("Tests passed");
