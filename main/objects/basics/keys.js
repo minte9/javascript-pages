@@ -1,6 +1,6 @@
 /**
- * Test if a property exists using 'in' operator
- * Walk over all keys of an object, with for ... in loop
+ * Test if a property exists
+ * Walk over all keys of an object, with for/in loop
  */
 
 let A = {};
@@ -10,11 +10,9 @@ let C = {
     'age': 30,
 };
 
-console.log(A.name);        // undefined
-console.log('name' in B);   // false
+console.assert(A.name == undefined, true);
+console.assert('name' in B == false, true);
 
 for (key in C) {
-    console.log(key + ": " + C[key]);
-        // name: John
-        // age: 30
+    console.log(C[key]); // John 30
 }

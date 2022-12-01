@@ -8,7 +8,7 @@
 
 function makeUser(name, age) {
     return {
-        name, // same as name: name
+        name, // same as, name: name
         age,
         tasks: 10,
     };
@@ -16,5 +16,7 @@ function makeUser(name, age) {
 
 let user = makeUser("Marry", 18);
 
-console.log(user.age);   // 18  
-console.log(user.tasks); // 10
+console.assert(user.age == 18, true);  
+console.assert(user.tasks == 10, true);
+
+console.log("Testes passed");
