@@ -12,7 +12,6 @@ let C = {
 
 console.log(A.name);        // undefined
 console.log('name' in B);   // false
-
 for (key in C) {
     console.log(C[key]);    // John 30
 }
