@@ -16,3 +16,5 @@ console.assert('name' in B == false, true);
 for (key in C) {
     console.log(C[key]); // John 30
 }
+
+console.log("Tests passed");
