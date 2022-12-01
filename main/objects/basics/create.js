@@ -14,7 +14,9 @@ let C = {
     [myvar]: 3, // computed properties
 }
 
-console.log(A.something); // undefined
-console.log(B.name); // John
-console.log(B.age); // 30
-console.log(C[myvar]); // 3
+console.assert(
+    A.something == 'undefined' + 
+    B.name == 'John' +
+    B.age == 30 +
+    C[myvar] == 3
+);
