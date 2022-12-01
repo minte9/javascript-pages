@@ -14,16 +14,9 @@ let C = {
     [x]: 3, // computed properties
 }
 
-console.assert(
-    A.something == undefined, true);
-
-console.assert(
-    B.name == 'John', true);
-
-console.assert(
-    B.age == 30, true);
-    
-console.assert(
-    C[x] == 3, true);
+console.assert(A.something == undefined, true);
+console.assert(B.name == 'John', true);
+console.assert(B.age == 30, true);
+console.assert(C[x] == 3, true);
 
 console.log("Tests passed");
