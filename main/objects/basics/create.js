@@ -8,7 +8,7 @@ let B = {
     name: "John",
     age: 30,  // trailing comma accepted
 };
-let x = "my key";
+let x = "mykey";
 let C = {
     "some key": 1,
     [x]: 3, // computed properties
@@ -16,6 +16,6 @@ let C = {
 
 console.assert(A.something == undefined, true);
 console.assert(B.name == 'John', true);
-console.assert(C[x] == 3, true);
+console.assert(C['mykey'] == 3, true);
 
 console.log("Tests passed");
