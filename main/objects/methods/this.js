@@ -1,6 +1,6 @@
 /**
- * To access the object itself, 
- * a method uses the this keyword
+ * To access the object itself, a method uses 
+ * this keyword
  * 
  * Arrow functions have no this, 
  * it is taken from the outer normal function
