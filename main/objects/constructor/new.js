@@ -1,6 +1,4 @@
 /**
- * New (constructor)
- *  
  * The 'new' operator allows to create many similar objects
  * The regular {...} allows to create only one object
  * 
@@ -21,11 +19,11 @@ function User(name) {
 let A = new User("Jack");
 let B = new User("Mike");
 
-let user = new function(name) {
+let C = new function(name) { // Singleton
     this.name = "John";
     this.isAdmin = true;
 }
 
 console.log(A.name);        // Jack
 console.log(B.name);        // Mike
-console.log(user.isAdmin);  // true
+console.log(C.isAdmin);     // true
