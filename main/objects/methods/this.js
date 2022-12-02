@@ -18,8 +18,8 @@ let A = {
 let B = {
     name: "Ilya",
     sayHi() {
-        let arrow = () => console.log(this.name);
-        arrow();
+        let c = () => console.log(this.name);
+        c();
     }
 };
 
