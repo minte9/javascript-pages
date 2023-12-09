@@ -8,8 +8,8 @@
     /* Add CSS styling for the graph container */
     #graph-container {
       width: 800px;
-      height: 800px;
-      border: 1px solid #ccc;
+      height: 700px;
+      /* border: 1px solid #ccc; */
     }
 
     .node {
@@ -18,6 +18,21 @@
       stroke: #aaa; /* Add border color */
       transition: r 0.3s ease;
       /* Transition for node size */
+    }
+
+    .node:hover {
+      stroke-width: 4px; /* Increase the border width on hover */
+      stroke: #87AFC7;
+    }
+
+    .node text {
+      font-size: 14px;
+      text-anchor: middle;
+      display: none;
+    }
+
+    .node:hover text {
+      display: block; /* Show text label on hover */
     }
 
     .link {
@@ -48,7 +63,118 @@
 
   <script>
     // Your data structure representing categories, subcategories, and pages
+
     const data = {
+      name: 'Machine Learning',
+      children: [
+        {
+          name: 'Algorithms',
+          children: [
+            { name: 'Knn Classifier' },
+            { name: 'Linear Regression' },
+            { name: 'Gradient Descent' },
+            { name: 'Decision Tree' },
+          ],
+        },
+        {
+          name: 'Supervised',
+          children: [
+            { name: 'Knn Classifier2' },
+            { name: 'Linear Regression2' },
+            { name: 'Basis Expansion' },
+            { name: 'Regularization' },
+            { name: 'Decision Tree2' },
+            { name: 'Random Forest' },
+            { name: 'Logistic Regression' },
+          ],
+        },
+        {
+          name: 'Datasets',
+          children: [
+            { name: 'Simulated Data' },
+            { name: 'Tmdb' },
+          ],
+        },
+        {
+          name: 'Calculus',
+          children: [
+            { name: 'Derivatives' },
+            { name: 'Integrals' },
+          ],
+        },
+        // ... more categories, subcategories, and pages
+      ],
+    };
+
+    const data2 = {
+      name: 'Algorithms',
+      children: [
+        {
+          name: 'Recursion',
+          children: [
+            { name: 'Call Stack' },
+            { name: 'Iterative Approach' },
+            { name: 'Memoization' },
+            { name: 'Head Tail' },
+          ],
+        },
+        {
+          name: 'Data Structures',
+          children: [
+            { name: 'Arrays, Sets' },
+            { name: 'Time Complexity' },
+            { name: 'Hash Tables' },
+            { name: 'Stacks' },
+            { name: 'Queues' },
+            { name: 'Linked Lists' },
+            { name: 'Trees' },
+            { name: 'Binary Search Trees' },
+            { name: 'Tries' },
+            { name: 'Graphs' },
+          ],
+        },
+        {
+          name: 'Comparison Based',
+          children: [
+            { name: 'Bubble Sort' },
+            { name: 'Selection Sort' },
+            { name: 'Merge Sort' },
+          ],
+        },
+        {
+          name: 'Divide Conquer',
+          children: [
+            { name: 'Binary Search' },
+            { name: 'Quicksort' },
+            { name: 'Karatsuba Multiplication' },
+          ],
+        },
+        {
+          name: 'Graph Traversal',
+          children: [
+            { name: 'Flood Fill' },
+            { name: 'Depth First Search' },
+            { name: 'Breadth First Search' },
+            { name: "Dijkstra's Algorithm" },
+          ],
+        },
+        {
+          name: 'Decision Making',
+          children: [
+            { name: 'Minimax' },
+          ],
+        },
+        {
+          name: 'Greedy',
+          children: [
+            { name: 'Coin Change' },
+            { name: 'Fractional Knapsack' },
+          ],
+        },
+      ],
+    };
+
+    const data3 = {
       name: 'Python',
       children: [
         {
@@ -133,7 +259,7 @@
 
     const simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(d => d.id).distance(100)) // Increase distance between nodes
-      .force("charge", d3.forceManyBody().strength(-50)) // Increase repulsion force
+      .force("charge", d3.forceManyBody().strength(-70)) // Increase repulsion force
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     const linkGroup = svg.append("g").attr("class", "links");
@@ -141,7 +267,7 @@
     const labelGroup = svg.append("g").attr("class", "labels");
 
 
-    const nodes = flatten(data);
+    const nodes = flatten(data3);
     const links = generateLinks(nodes);
 
     function flatten(root) {
@@ -216,7 +342,7 @@
       .on("click", clicked)
       .each(function (d) {
         const numChildren = d.data.children ? d.data.children.length : 0;
-        const minRadius = 5; // Define a minimum radius for nodes
+        const minRadius = 10; // Define a minimum radius for nodes
         const maxRadius = 20; // Define a maximum radius for nodes
         const scaledRadius = minRadius + (maxRadius - minRadius) * (numChildren / maxNumChildren); // Scale the radius based on the number of children
         d3.select(this).attr("r", scaledRadius); // Set the calculated radius for each node
@@ -269,10 +395,7 @@
 
     const leafLabels = labelGroup.selectAll(".label").filter(d => d.target.depth === 2);
     leafLabels.style("display", "none");
-    //console.log(leafLabels);
 
-
-    var strength_increase = -10;
 
     function clicked(event, d) {
       console.log("Clicked:", d.data.name);
@@ -294,8 +417,9 @@
       labels.style("display", "none");
 
       // Display labels for specific depths
-      labels.filter(d => d.depth === 0 || d.depth === 1)
-        .style("display", "block");
+      labels.filter(d => d.depth === 0 || d.depth === 1).style("display", "block");
+
+      labels.filter(d => {}).style("display", "block");
 
       // Hide last children (subcategory clicked)
       if (d.depth === 0 || d.depth === 1) {
@@ -333,13 +457,7 @@
         if (nodeData.id === d.id && d.depth == 2) return '#3EB489'; // Change color of the clicked node
         else if (nodeData.depth == 0) return '#F5A9A9'; // Category node color
         else if (nodeData.depth === 1) return '#F3F781'; // Subcategory color
-        else if (nodeData.depth === 2) return '#FFF'; // Page color
-      });
-
-      // Reset the size of all nodes except the clicked one
-      node.attr("r", nodeData => {
-        if (nodeData.id === d.id) return nodeData.data.initialRadius; // Reset only the clicked node
-        return nodeData.data.initialRadius; // Reset other nodes to their initial sizes
+        else if (nodeData.depth === 2) return '#87AFC7'; // Page color - blue
       });
 
       // Increase size for node clicked children
@@ -366,12 +484,14 @@
 
     }
 
+    // Overwrite leaf click event
     const pagesNodes = nodeGroup.selectAll(".node").filter(d => d.depth === 2 && d.data.url);
     pagesNodes.on("click", function() {
       const nodeData = d3.select(this).datum(); // Get the bound data for the clicked node
       if (nodeData.data.url) {
         window.open(nodeData.data.url, "_blank");
       }
+      d3.select(this).attr('fill', '#3EB489'); // green
     });
 
   </script>
