@@ -72,7 +72,7 @@
             { name: 'Knn Classifier' },
             { name: 'Linear Regression' },
             { name: 'Gradient Descent' },
-            { name: 'Decision Tree' },
+            { name: 'Decision Tree', url: 'https://example.com' },
           ],
         },
         {
@@ -154,7 +154,7 @@
             { name: 'Flood Fill' },
             { name: 'Depth First Search' },
             { name: 'Breadth First Search' },
-            { name: "Dijkstra's Algorithm" },
+            { name: 'Dijkstra Algorithm' },
           ],
         },
         {
@@ -266,14 +266,15 @@
     const labelGroup = svg.append("g").attr("class", "labels");
 
 
-    const nodes = flatten(data3);
+    const nodes = flatten(data);
     const links = generateLinks(nodes);
 
     function flatten(root) {
       const nodes = [];
       function recurse(node, depth) {
         if (node.children) node.children.forEach(child => {
-          nodes.push({ id: child.name.replace(/\s+/g, "_"), data: child, depth: depth + 1 });
+          const childName = child.name.replace(/\s+/g, "_");
+          nodes.push({ id: childName, data: child, depth: depth + 1 });
           recurse(child, depth + 1);
         });
       }
@@ -345,7 +346,8 @@
         const maxRadius = 20; // Define a maximum radius for nodes
         const scaledRadius = minRadius + (maxRadius - minRadius) * (numChildren / maxNumChildren); // Scale the radius based on the number of children
         d3.select(this).attr("r", scaledRadius); // Set the calculated radius for each node
-      });
+      })
+      ;
 
     const labels = nodeGroup.selectAll(".label")
       .data(nodes)
