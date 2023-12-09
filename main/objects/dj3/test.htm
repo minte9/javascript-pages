@@ -30,6 +30,7 @@
       font-size: 14px;
       text-anchor: middle;
       display: none;
+      user-select: none; /* Disable text selection */
     }
 
     .page {
@@ -132,7 +133,7 @@
 
     const simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(d => d.id).distance(100)) // Increase distance between nodes
-      .force("charge", d3.forceManyBody().strength(-100)) // Increase repulsion force
+      .force("charge", d3.forceManyBody().strength(-50)) // Increase repulsion force
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     const linkGroup = svg.append("g").attr("class", "links");
@@ -242,7 +243,7 @@
         .attr("cy", d => d.y);
 
       labels.attr("x", d => d.x)
-        .attr("y", d => d.y + d.data.initialRadius + 10); // Adjust label positioning
+        .attr("y", d => d.y + d.data.initialRadius + 15); // Adjust label positioning
     });
 
     simulation.force("link").links(links);
@@ -297,9 +298,11 @@
         .style("display", "block");
 
       // Hide last children (subcategory clicked)
-      leafNodes.style("display", "none");
-      leafLinks.style("display", "none");
-      leafLabels.style("display", "none");
+      if (d.depth === 0 || d.depth === 1) {
+        leafNodes.style("display", "none");
+        leafLinks.style("display", "none");
+        leafLabels.style("display", "none");
+      }
 
       // Display labels for the children of the clicked node
       if (d.data.children) {
@@ -327,7 +330,7 @@
 
       // Change color of the clicked node
       node.attr("fill", nodeData => {
-        if (nodeData.id === d.id) return '#3EB489'; // Change color of the clicked node
+        if (nodeData.id === d.id && d.depth == 2) return '#3EB489'; // Change color of the clicked node
         else if (nodeData.depth == 0) return '#F5A9A9'; // Category node color
         else if (nodeData.depth === 1) return '#F3F781'; // Subcategory color
         else if (nodeData.depth === 2) return '#FFF'; // Page color
@@ -340,7 +343,7 @@
       });
 
       // Increase size for node clicked children
-      if (d.data.children) {
+      if (d.data.children && d.depth == 1) {
         d.data.children.forEach(child => {
           const childId = `${child.name.replace(/\s+/g, "_")}`; // Replace spaces with underscores for label IDs
 
