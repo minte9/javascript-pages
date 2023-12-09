@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Knowledge Graph</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Add CSS styling for the graph container */
+    #graph-container {
+      width: 1000px;
+      height: 1000px;
+      border: 1px solid #ccc;
+    }
+
+    .node {
+      cursor: pointer;
+      stroke-width: 2px;
+      stroke: #aaa; /* Add border color */
+      transition: r 0.3s ease;
+      /* Transition for node size */
+    }
+
+    .link {
+      fill: none;
+      stroke: #999;
+      stroke-width: 0.5px;
+    }
+
+    .label {
+      font-size: 14px;
+      text-anchor: middle;
+      display: none;
+    }
+
+    .page {
+      display: none;
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="graph-container"></div>
+
+  <script>
+    // Your data structure representing categories, subcategories, and pages
+    const data = {
+      name: 'Python',
+      children: [
+        {
+          name: 'Storage',
+          children: [
+            { name: 'Files' },
+            { name: 'Databases' },
+            { name: 'Pipes' },
+            { name: 'With Open' },
+            { name: 'Shelve' },
+            { name: 'Zip' },
+            { name: 'Csv' },
+            { name: 'Json', url: 'https://www.json.org/json-en.html' },
+          ],
+        },
+        {
+          name: 'Class',
+          children: [
+            { name: 'Definition' },
+            { name: 'Attributes' },
+            { name: 'Functional' },
+            { name: 'Methods' },
+          ],
+        },
+        {
+          name: 'Goodies',
+          children: [
+            { name: 'Conditional Expression' },
+            { name: 'List Comprehension' },
+            { name: 'Generator' },
+            { name: 'Named Tuple' },
+            { name: 'Modules' },
+          ],
+        },
+        {
+          name: 'Applications',
+          children: [
+            { name: 'Pythagorean Theorem' },
+            { name: 'Palindrome' },
+            { name: 'Word Search' },
+            { name: 'Conway Game' },
+            { name: 'Coin Flip' },
+          ],
+        },
+        {
+          name: 'Strings',
+          children: [
+            { name: 'Regex' },
+            { name: 'Encrypt' },
+          ],
+        },
+        {
+          name: 'Scheduler',
+          children: [
+            { name: 'Time' },
+            { name: 'Multithreading' },
+            { name: 'Subprocess' },
+            { name: 'Logging' },
+          ],
+        },
+        {
+          name: 'Packages',
+          children: [
+            { name: 'Clipboard' },
+            { name: 'Ocr' },
+            { name: 'Socket' },
+            { name: 'Image' },
+            { name: 'Virtualenv' },
+            { name: 'Jupyter' },
+            { name: 'Icecream' },
+            { name: 'Anytree' },
+            { name: 'Openai' },
+          ],
+        },
+      ],
+    };
+
+    const svg = d3.select("#graph-container").append("svg");
+    const width = document.getElementById('graph-container').clientWidth;
+    const height = document.getElementById('graph-container').clientHeight;
+    svg.attr("width", width).attr("height", height);
+
+    const simulation = d3.forceSimulation()
+      .force("link", d3.forceLink().id(d => d.id).distance(100)) // Increase distance between nodes
+      .force("charge", d3.forceManyBody().strength(-150)) // Increase repulsion force
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    const linkGroup = svg.append("g").attr("class", "links");
+    const nodeGroup = svg.append("g").attr("class", "nodes");
+    const labelGroup = svg.append("g").attr("class", "labels");
+
+    const nodes = flatten(data);
+    const links = generateLinks(nodes);
+
+    // Store initial radius for each node
+    nodes.forEach(node => {
+      node.data.initialRadius = calculateInitialRadius(node);
+    });
+
+    const link = linkGroup.selectAll(".link")
+      .data(links)
+      .enter().append("line")
+      .attr("class", "link");
+
+    // Calculate maxNumChildren from your data structure
+    let maxNumChildren = 0;
+
+    function calculateMaxChildren(node) {
+      if (node.children) {
+        maxNumChildren = Math.max(maxNumChildren, node.children.length);
+        node.children.forEach(child => {
+          calculateMaxChildren(child);
+        });
+      }
+    }
+
+    calculateMaxChildren(data); // Assuming 'data' is your root data structure
+
+    const node = nodeGroup.selectAll(".node")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("class", "node")
+      .attr("id", d => `node-${d.id}`) // Add unique IDs to nodes
+      .attr("r", d => d.data.initialRadius) // Use stored initial radius
+      .attr("fill", d => {
+        if (d.depth == 0) return '#F5A9A9'; // Root node color (category)
+        else if (d.depth === 1) return '#F3F781'; // Subcategory color
+        else return '#BCC6CC'; // page color
+      })
+      .on("click", clicked)
+      .each(function (d) {
+        const numChildren = d.data.children ? d.data.children.length : 0;
+        const minRadius = 10; // Define a minimum radius for nodes
+        const maxRadius = 20; // Define a maximum radius for nodes
+        const scaledRadius = minRadius + (maxRadius - minRadius) * (numChildren / maxNumChildren); // Scale the radius based on the number of children
+        d3.select(this).attr("r", scaledRadius); // Set the calculated radius for each node
+      });
+
+    const labels = nodeGroup.selectAll(".label")
+      .data(nodes)
+      .enter().append("text")
+      .attr("class", "label")
+      .attr("id", d => `label-${d.id.replace(/\s+/g, "_")}`) // Replace spaces with underscores for label IDs
+      .text(d => d.data.name)
+      .attr("fill", "#333")
+      ;
+
+    const pagesContainer = d3.select("#graph-container").append("div").attr("id", "pages-container");
+
+    simulation.nodes(nodes).on("tick", () => {
+      link.attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node.attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      labels.attr("x", d => d.x)
+        .attr("y", d => d.y + d.data.initialRadius + 10); // Adjust label positioning
+    });
+
+    simulation.force("link").links(links);
+
+    // Display only root label
+    labels.filter(d => d.depth === 0 || d.depth === 1)
+      .style("display", "block");
+
+    function flatten(root) {
+      const nodes = [];
+      function recurse(node, depth) {
+        if (node.children) node.children.forEach(child => {
+          nodes.push({ id: child.name, data: child, depth: depth + 1 });
+          recurse(child, depth + 1);
+        });
+      }
+      nodes.push({ id: root.name, data: root, depth: 0 });
+      recurse(root, depth = 0);
+      return nodes;
+    }
+
+    function generateLinks(nodes) {
+      const links = [];
+      nodes.forEach(node => {
+        if (node.data.children) {
+          node.data.children.forEach(child => {
+            const target = nodes.find(n => n.data.name === child.name);
+            if (target) {
+              targetId = target.id.replace(/\s+/g, "_");
+              const linkId = `link-${node.id}-${targetId}`; // Generate a unique ID for the link
+              links.push({ source: node, target, id: linkId }); // Include the ID in the link object
+            }
+          });
+        }
+      });
+      return links;
+    }
+
+    function calculateInitialRadius(node) {
+      if (node.data.children) {
+        return 10 + node.data.children.length * 2; // Modify the logic to set the initial size based on children count
+      }
+      return 10; // Default size
+    }
+
+    function clicked(event, d) {
+      console.log("Clicked:", d.data.name);
+
+      // Move the root node to make room for the central node
+      const root = nodes.find(node => node.depth == 0);
+      if (d.id !== root.id) {
+        const dx = d.x - width / 2;
+        const dy = d.y - height / 2;
+
+        root.fx = width / 2 - dx * 0.3; // Adjust the factor for the root node's movement
+        root.fy = height / 2 - dy * 0.3; // Adjust the factor for the root node's movement
+      }
+
+      // Restart simulation with reduced alpha value for smooth transition
+      simulation.alpha(0.5).restart();
+
+      // Reset all labels' visibility to hidden
+      // labels.style("display", "none");
+
+      // Display labels for specific depths
+      labels.filter(d => d.depth === 0 || d.depth === 1)
+        .style("display", "block");
+
+      // // Display labels for the children of the clicked node
+      // if (d.data.children) {
+      //   d.data.children.forEach(child => {
+      //     const labelId = `label-${child.name.replace(/\s+/g, "_")}`; // Replace spaces with underscores for label IDs
+      //     d3.select(`#${labelId}`).style("display", "block");
+      //   });
+      // }
+
+      // Remove fixed positions from other nodes
+      nodes.forEach(node => {
+        if (node.id !== d.id && node.id !== root.id) {
+          node.fx = null;
+          node.fy = null;
+        }
+      });
+
+      // Change color of the clicked node
+      node.attr("fill", nodeData => {
+        if (nodeData.id === d.id) return '#3EB489'; // Change color of the clicked node
+        else if (nodeData.depth == 0) return '#F5A9A9'; // Category node color
+        else if (nodeData.depth === 1) return '#F3F781'; // Subcategory color
+        else if (nodeData.depth === 2) return '#BCC6CC'; // Page color
+      });
+
+      // Reset the size of all nodes except the clicked one
+      node.attr("r", nodeData => {
+        if (nodeData.id === d.id) return nodeData.data.initialRadius; // Reset only the clicked node
+        return nodeData.data.initialRadius; // Reset other nodes to their initial sizes
+      });
+    }
+
+    const pagesNodes = nodeGroup.selectAll(".node")
+      .filter(d => d.depth === 2 && d.data.url);
+
+      pagesNodes.on("click", function() {
+        const nodeData = d3.select(this).datum(); // Get the bound data for the clicked node
+        if (nodeData.data.url) {
+          window.open(nodeData.data.url, "_blank");
+        }
+      });
+
+      // Hide leaf nodes and edges on startup
+      const leafNodes = nodeGroup.selectAll(".node").filter(d => d.depth === 2);
+      leafNodes.style("display", "none");
+
+      const leafLinks = linkGroup.selectAll(".link").filter(d => d.target.depth === 2);
+      leafLinks.style("display", "none");
+
+      const leafLabels = labelGroup.selectAll(".label").filter(d => d.target.depth === 2);
+      leafLabels.style("display", "none");
+      console.log(leafLabels);
+
+
+      // Event handler for subcategory nodes (parent nodes)
+      const subcategoryNodes = nodeGroup.selectAll(".node").filter(d => d.depth === 1);
+      subcategoryNodes.on("click", function() {
+        // Show the leaf nodes and edges of the clicked subcategory node
+        const subcategoryNode = d3.select(this).datum(); 
+        console.log("Clicked:", subcategoryNode.data.name);
+
+        // leafNodes.style("display", "none");
+        // leafLinks.style("display", "none");
+        // leafLabels.style("display", "none");
+
+        const clickedLeafNodes = leafNodes.filter(node => {
+          const subcategoryChildren = subcategoryNode.data.children.map(child => child.name);
+
+          nodeName = node.data.name;
+          if (subcategoryChildren.includes(nodeName)) {
+            nodeName = nodeName.replace(/\s+/g, "_");
+            console.log(nodeName);
+
+            const labelId = `label-${nodeName}`;
+            d3.select(`#${labelId}`).style("display", "block");
+
+            const linkId = `link-${node.id}-${nodeName}`;
+            d3.select(`#${linkId}`).style("display", "block");
+        }
+          
+          return subcategoryChildren.includes(node.data.name);
+        });
+        clickedLeafNodes.style("display", "block");
+      });
+
+
+  </script>
+</body>
+
+</html>

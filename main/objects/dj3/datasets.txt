@@ -1,0 +1,187 @@
+const data2 = {
+      name: 'Machine Learning',
+      children: [
+        {
+          name: 'Algorithms',
+          children: [
+            { name: 'Knn Classifier' },
+            { name: 'Linear Regression' },
+            { name: 'Gradient Descent' },
+            { name: 'Decision Tree' },
+          ],
+        },
+        {
+          name: 'Supervised',
+          children: [
+            { name: 'Knn Classifier2' },
+            { name: 'Linear Regression2' },
+            { name: 'Basis Expansion' },
+            { name: 'Regularization' },
+            { name: 'Decision Tree2' },
+            { name: 'Random Forest' },
+            { name: 'Logistic Regression' },
+          ],
+        },
+        {
+          name: 'Datasets',
+          children: [
+            { name: 'Simulated Data' },
+            { name: 'Tmdb' },
+          ],
+        },
+        {
+          name: 'Calculus',
+          children: [
+            { name: 'Derivatives' },
+            { name: 'Integrals' },
+          ],
+        },
+        // ... more categories, subcategories, and pages
+      ],
+    };
+
+const data2 = {
+      name: 'Algorithms',
+      children: [
+        {
+          name: 'Recursion',
+          children: [
+            { name: 'Call Stack' },
+            { name: 'Iterative Approach' },
+            { name: 'Memoization' },
+            { name: 'Head Tail' },
+          ],
+        },
+        {
+          name: 'Data Structures',
+          children: [
+            { name: 'Arrays, Sets' },
+            { name: 'Time Complexity' },
+            { name: 'Hash Tables' },
+            { name: 'Stacks' },
+            { name: 'Queues' },
+            { name: 'Linked Lists' },
+            { name: 'Trees' },
+            { name: 'Binary Search Trees' },
+            { name: 'Tries' },
+            { name: 'Graphs' },
+          ],
+        },
+        {
+          name: 'Comparison Based',
+          children: [
+            { name: 'Bubble Sort' },
+            { name: 'Selection Sort' },
+            { name: 'Merge Sort' },
+          ],
+        },
+        {
+          name: 'Divide Conquer',
+          children: [
+            { name: 'Binary Search' },
+            { name: 'Quicksort' },
+            { name: 'Karatsuba Multiplication' },
+          ],
+        },
+        {
+          name: 'Graph Traversal',
+          children: [
+            { name: 'Flood Fill' },
+            { name: 'Depth First Search' },
+            { name: 'Breadth First Search' },
+            { name: "Dijkstra's Algorithm" },
+          ],
+        },
+        {
+          name: 'Decision Making',
+          children: [
+            { name: 'Minimax' },
+          ],
+        },
+        {
+          name: 'Greedy',
+          children: [
+            { name: 'Coin Change' },
+            { name: 'Fractional Knapsack' },
+          ],
+        },
+      ],
+    };
+
+    const data3 = {
+      name: 'Python',
+      children: [
+        {
+          name: 'Storage',
+          children: [
+            { name: 'Files' },
+            { name: 'Databases' },
+            { name: 'Pipes' },
+            { name: 'With Open' },
+            { name: 'Shelve' },
+            { name: 'Zip' },
+            { name: 'Csv' },
+            { name: 'Json' },
+          ],
+        },
+        {
+          name: 'Class',
+          children: [
+            { name: 'Definition' },
+            { name: 'Attributes' },
+            { name: 'Functional' },
+            { name: 'Methods' },
+          ],
+        },
+        {
+          name: 'Goodies',
+          children: [
+            { name: 'Conditional Expression' },
+            { name: 'List Comprehension' },
+            { name: 'Generator' },
+            { name: 'Named Tuple' },
+            { name: 'Modules' },
+          ],
+        },
+        {
+          name: 'Applications',
+          children: [
+            { name: 'Pythagorean Theorem' },
+            { name: 'Palindrome' },
+            { name: 'Word Search' },
+            { name: 'Conway Game' },
+            { name: 'Coin Flip' },
+          ],
+        },
+        {
+          name: 'Strings',
+          children: [
+            { name: 'Regex' },
+            { name: 'Encrypt' },
+          ],
+        },
+        {
+          name: 'Scheduler',
+          children: [
+            { name: 'Time' },
+            { name: 'Multithreading' },
+            { name: 'Subprocess' },
+            { name: 'Logging' },
+          ],
+        },
+        {
+          name: 'Packages',
+          children: [
+            { name: 'Clipboard' },
+            { name: 'Ocr' },
+            { name: 'Socket' },
+            { name: 'Image' },
+            { name: 'Virtualenv' },
+            { name: 'Jupyter' },
+            { name: 'Icecream' },
+            { name: 'Anytree' },
+            { name: 'Openai' },
+          ],
+        },
+      ],
+    };
