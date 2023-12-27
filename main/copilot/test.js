@@ -6,3 +6,7 @@ function calculateDaysBetweenDates(startDate, endDate) {
 }
 
 console.log(calculateDaysBetweenDates('2020-01-01', '2020-01-31'));
+alert(calculateDaysBetweenDates('2020-01-01', '2020-01-31'));
+
+// Ctrl + Alt + I // Open Sidebar Chat
+// Ctrl + I // Open Copilot Chat - Inline
