@@ -1,4 +1,4 @@
-### Vue vs. jQuery
+### Vue vs. jQuery 
 
 For simple example, jQuery is more direct and more readable. 
 
