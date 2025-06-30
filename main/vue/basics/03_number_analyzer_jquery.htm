@@ -1,0 +1,27 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="app">
+  <h2>Live Number Analyzer</h2>
+
+  <input type="number" id="numberInput" placeholder="Enter a number (0–100)">
+
+  <p>Value: <span id="value">0</span></p>
+  <p>Square: <span id="square">0</span></p>
+  <p>Status: <strong id="status">Even</strong></p>
+
+  <div style="background: #eee; width: 100%; height: 20px; margin-top: 10px;">
+    <div id="progressBar" style="background: green; width: 0%; height: 100%;"></div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#numberInput').on('input', function () {
+      const val = parseInt($(this).val(), 10) || 0;
+      $('#value').text(val);
+      $('#square').text(val * val);
+      $('#status').text(val % 2 === 0 ? 'Even' : 'Odd');
+      $('#progressBar').css('width', val + '%');
+    });
+  });
+</script>

@@ -1,0 +1,50 @@
+<div id="app">
+    <h1>Api Fetch</h1>
+
+    <p v-if="!loading">
+       Value: {{ my_number }}
+    </p>
+    <p>Square: {{ square }}</p>
+    <p>Status: {{ isEven ? 'Even' : 'Odd' }}</p>
+
+    <input type="number" v-model.number="my_number" placeholder="Enter a number (0-100)">
+
+    <button @click="fetchRandomNumber">Get Random Number</button>
+    <p v-if="loading">Loading...</p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data() {
+            return {
+                my_number: 0,
+                loading: false,
+            }
+        },
+        computed: {
+            square() {
+                return this.my_number * this.my_number;
+            },
+            isEven() {
+                return this.my_number % 2 === 0;
+            }
+        },
+        methods: {
+            async fetchRandomNumber() {
+                this.loading = true;
+                try {
+                    const res = await fetch('https://www.randomnumberapi.com/api/v1.0/random?min=1&max=100&count=1');
+                    const data = await res.json();
+                    this.my_number = data[0];
+                } catch (error) {
+                    alert('Error fetching random number.');
+                } finally {
+                    this.loading = false;
+                }
+            }
+        }
+    }).mount('#app');
+</script>

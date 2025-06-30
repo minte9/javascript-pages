@@ -1,0 +1,14 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="app">
+    <h1 id="message">Hello jQuery!</h1>
+    <button id="changeBtn">Click me</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#changeBtn').on('click', function () {
+            $('#message').text('jQuery is awesome!');
+        });
+    });
+</script>

@@ -1,0 +1,36 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<div id="app">
+    <h2>My List ({{ items.length }} items)</h2>
+
+    <ul>
+        <li v-for="(item, index) in items" :key="index">
+            {{ item }} <button @click="removeItem(index)">Remove</button>
+        </li>
+    </ul>
+
+    <input v-model="newItem" placeholder="New Item" @keyup.enter="addItem">
+    <button @click="addItem">Add</button>
+</div>
+
+<script>
+    const { createApp } = Vue;
+
+    createApp({
+        data() {
+            return {
+                'items': ['apple', 'banana'],
+            }
+        },
+        methods: {
+            removeItem(index) {
+                this.items.splice(index, 1);
+            },
+            addItem() {
+                if (this.newItem.trim()) {
+                    this.items.push(this.newItem.trim());
+                    this.newItem = '';
+                }
+            }
+        }
+    }).mount('#app');
+</script>

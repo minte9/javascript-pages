@@ -1,0 +1,43 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div id="app">
+  <h2>My List (<span id="count">2</span> items)</h2>
+
+  <ul id="itemList">
+    <li>Apple <button class="remove">Remove</button></li>
+    <li>Banana <button class="remove">Remove</button></li>
+  </ul>
+
+  <input id="newItem" placeholder="New item">
+  <button id="addBtn">Add</button>
+</div>
+
+<script>
+  function updateCount() {
+    $('#count').text($('#itemList li').length);
+  }
+
+  function bindRemoveHandlers() {
+    $('.remove').off('click').on('click', function () {
+      $(this).parent().remove();
+      updateCount();
+    });
+  }
+
+  $(document).ready(function () {
+    updateCount();
+    bindRemoveHandlers();
+
+    $('#addBtn').on('click', function () {
+      const newItem = $('#newItem').val().trim();
+      if (newItem) {
+        $('#itemList').append(
+          `<li>${newItem} <button class="remove">Remove</button></li>`
+        );
+        $('#newItem').val('');
+        updateCount();
+        bindRemoveHandlers(); // Re-bind click events
+      }
+    });
+  });
+</script>
