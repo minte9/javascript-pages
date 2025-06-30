@@ -196,3 +196,8 @@ We’ll simulate fetching a random number from an API with async/wait.
     }).mount('#app');
 </script>
 ~~~
+
+
+### References
+
+https://vuejs.org/guide/introduction.html
