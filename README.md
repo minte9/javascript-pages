@@ -1,21 +1,15 @@
-# Javascript Pages
+# Javascript
 
-Learn and Remember - [minte9.com/javascript](https://www.minte9.com/javascript)
-
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/minte9/javascript-pages)
-
-- [Fundamentals](./main/fundamentals/) 
-- [Testing](./main/testing/) 
-- [Objects](./main/objects/) 
-- [Types](./main/types/) 
-- [Classes](./main/classes/) 
-
-##
+### Install
 
 ~~~sh
-# Install
 git clone https://github.com/minte9/javascript-pages.git
+cd javascript-pages/
+~~~
 
-# Update
+### Updates
+
+~~~sh
+cd javascript-pages/
 git pull origin main
 ~~~
