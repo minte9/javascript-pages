@@ -1,4 +1,5 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 <div id="app">
     <h1>{{ message }}</h1>
     <button @click='changeMessage'>Click me</button>
@@ -20,3 +21,7 @@
         }
     }).mount('#app');
 </script>
+
+<style>
+    button {color: blue;}
+</style>
